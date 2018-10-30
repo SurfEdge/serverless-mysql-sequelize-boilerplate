@@ -3,7 +3,7 @@
 This will be a guide+boilerplate on getting started on with Serverless + MySQL with Sequelize (ORM for NodeJS)
 
 Get yourself a serverless REST API up with connected to a MySQL server in a few minutes on NodeJS.
-
+# i edited it
 # Whats Included
 
 C- Create Documents
