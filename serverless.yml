@@ -5,11 +5,11 @@ provider:
   runtime: nodejs8.10
 
 functions:
-  hello:
-    handler: handler.hello
+  teamsAll:
+    handler: handler.teamsAll
     events:
     - http:
-        path: users
+        path: teams
         method: get
 
 plugins:
