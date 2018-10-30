@@ -1,7 +1,5 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../lib/database.js');
-
-module.exports =  sequelize.define('Team', {
+module.exports = (sequelize, Sequelize) => {
+  const Team =  sequelize.define('Team', {
       id: {
         type: Sequelize.INTEGER(11),
         allowNull: false,
@@ -35,4 +33,7 @@ module.exports =  sequelize.define('Team', {
     }, {
       tableName: 'Team',
       timestamps: true
-    });
+    })
+    return Team;
+  }
+    ;
