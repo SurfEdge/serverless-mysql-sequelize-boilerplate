@@ -1,0 +1,16 @@
+service: thepapare-stats-cricket
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+    - http:
+        path: users
+        method: get
+
+plugins:
+  - serverless-offline
