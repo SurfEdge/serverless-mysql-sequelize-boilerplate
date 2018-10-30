@@ -1,4 +1,4 @@
-service: thepapare-stats-cricket
+service: sls-boilerplate-sequilize
 
 provider:
   name: aws
