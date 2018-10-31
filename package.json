@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serverless offline start"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,9 @@
   "homepage": "https://github.com/chamathpali/serverless-mysql-sequelize-boilerplate#readme",
   "devDependencies": {
     "serverless-offline": "^3.30.0"
+  },
+  "dependencies": {
+    "pg": "^7.6.0",
+    "sequelize": "^4.41.0"
   }
 }
