@@ -25,6 +25,28 @@ const getAll = function (event, ct, callback) {
 
 };
 
+const deleteById = (event, ctx, cb) => {
+    const body = event.body ? event.body : {};
+    const { id } = body;
+    const response = {
+        statusCode: 200,
+        body: {},
+    };
+    Team.destroy({ where: id }).then(deleted => {
+        response.body = {
+            data: deleted,
+            status: true,
+        };
+    }).catch(error => {
+        if (error) {
+            console.log(error);
+        }
+    })
+    .finally(() => {
+        cb(null, JSON.stringify(response));
+    })
+}
+
 const create = (event, ctx, cb) => {
     const body = event.body ? event.body : {};
     const data = JSON.parse(body);
@@ -68,5 +90,6 @@ const create = (event, ctx, cb) => {
 
 module.exports = {
     create,
-    getAll
+    getAll,
+    deleteById
 }
