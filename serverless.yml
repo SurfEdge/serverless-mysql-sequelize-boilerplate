@@ -11,6 +11,13 @@ functions:
     - http:
         path: teams
         method: get
+  createTeam:
+    handler: handler.createTeam
+    events:
+    - http:
+        path: teams
+        method: post
+
 
 plugins:
   - serverless-offline
