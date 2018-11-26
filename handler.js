@@ -7,4 +7,8 @@ module.exports.teamsAll = (event, context, callback) => {
 
 module.exports.createTeam = (event, context, callback) => {
   team.create(event, context, callback )
+};
+
+module.exports.updateTeam = (event, context, callback) => {
+  team.update(event, context, callback )
 }

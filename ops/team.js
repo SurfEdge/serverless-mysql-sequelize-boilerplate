@@ -88,8 +88,47 @@ const create = (event, ctx, cb) => {
         })
 }
 
+const update = (event, ctx, cb) => {
+    const body = event.body ? event.body : {};
+    const response = {
+        statusCode: 200,
+        body: {},
+    };
+    const {
+        fullName,
+        shortName,
+        homeGround,
+        logo,
+        staff,
+        description
+    } = body;
+    console.log(body);
+    Team.update({
+        full_name: fullName,
+        short_name: shortName,
+        home_ground: homeGround,
+        logo: logo,
+        staff: staff,
+        description: description,
+    },{ where: id })
+    .then(updated => {
+        response.body = {
+            data: updated,
+            status: true,
+        };
+    }).catch(error => {
+        if (error) {
+            console.log(error);
+        }
+    })
+    .finally(() => {
+        cb(null, JSON.stringify(response));
+    })
+}
+
 module.exports = {
     create,
     getAll,
+    update,
     deleteById
 }
